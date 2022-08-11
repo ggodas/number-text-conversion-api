@@ -9,11 +9,11 @@ RUN poetry export -f requirements.txt --output requirements.txt --without-hashes
 
 FROM python:3.9
 
-WORKDIR /app
+WORKDIR /home
 COPY --from=requirements-stage /tmp/requirements.txt /app/requirements.txt
 
 RUN pip install --no-cache-dir --upgrade -r /app/requirements.txt
 
-COPY ./src/app /app/app
+COPY ./src/app /home/app
 
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

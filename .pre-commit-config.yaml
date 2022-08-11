@@ -1,0 +1,39 @@
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks.git
+  rev: v3.4.0
+  hooks:
+    - id: debug-statements
+    - id: trailing-whitespace
+      args: [--markdown-linebreak-ext=md]
+    - id: check-merge-conflict
+#    - id: check-executables-have-shebangs
+    - id: check-ast
+    - id: fix-byte-order-marker
+    - id: check-json
+    - id: check-symlinks
+    - id: check-vcs-permalinks
+    - id: check-xml
+    - id: check-yaml
+    - id: detect-aws-credentials
+      args: ['--allow-missing-credentials']
+    - id: detect-private-key
+    - id: forbid-new-submodules
+    - id: no-commit-to-branch
+    - id: end-of-file-fixer
+    - id: mixed-line-ending
+      args: [--fix=lf]
+    - id: pretty-format-json
+      args: [--autofix, --no-ensure-ascii]
+      exclude: gui/bohui/cypress/fixtures
+-   repo: https://github.com/pre-commit/pygrep-hooks
+    rev: v1.8.0
+    hooks:
+    -   id: python-use-type-annotations
+-   repo: https://github.com/psf/black
+    rev: 22.3.0
+    hooks:
+    -   id: black
+- repo: https://gitlab.com/pycqa/flake8
+  rev: 3.8.4
+  hooks:
+    - id: flake8

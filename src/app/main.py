@@ -19,5 +19,5 @@ app.include_router(api_router, prefix=API_V1_STR)
 async def exception_handler(request: Request, exc: Exception):
     return JSONResponse(
         status_code=418,
-        content={"message": "Oops! did something wrong!!!"},
+        content={"message": "Oops! did something wrong!!!???"},
     )

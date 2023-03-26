@@ -17,6 +17,8 @@ TAGS_METADATA = [
     },
 ]
 
+A_NEW_VARIABLE = "Just a git test"
+
 VERSION = "0.0.1"
 TITLE = "DecoderApi"
 API_V1_STR: str = "/api"
